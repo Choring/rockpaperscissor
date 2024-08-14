@@ -14,7 +14,9 @@ const GameBox = styled.div`
   justify-content: center;
   align-itmes: center;
   gap: 10px;
-
+  h1 {
+    margin-top: 150px;
+  }
 `;
 
 const ResultBox = styled.div`
@@ -84,8 +86,16 @@ function App() {
   return (
     <>
       <GameBox>
-        <Box title = "user" result={meText} image={clickValue}/>
-        <Box title = "computer" result={comText} image={computerValue} />
+        {clickValue == null && computerValue == null ? 
+          <>
+            <h1>가위 바위 보 게임 START!!</h1>
+          </>
+        :
+          <>
+            <Box title = "user" result={meText} image={clickValue}/>
+            <Box title = "computer" result={comText} image={computerValue} />
+          </>
+        }
       </GameBox>
       <ResultBox>
           <ChoiceBox>

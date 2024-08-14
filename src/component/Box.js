@@ -33,17 +33,17 @@ const Box = (props) => {
   const title = props.title;
   const image = `${props.image}.png`;
   const result = props.result;
-
+  
   return (
     <>
         <BoxStyle>
-            <div className={`${(props.title == 'user' ? "me" : "computer")}`}>
-              <p className='text title'>{title}</p>
-              <div>
-                  <img className='image' src={`game/${image}`} alt='image' />
-                  <p className='text result'>{result}</p>
-              </div>  
-            </div>
+          <div className={`${(props.title == 'user' ? "me" : "computer")}`}>
+            <p className='text title'>{title}</p>
+            <div>
+                <img className='image' src={`game/${image}`} alt='image' />
+                <p className='text result'>{result}</p>
+            </div>  
+          </div>      
         </BoxStyle>
     </>
   )
