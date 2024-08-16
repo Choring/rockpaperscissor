@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Box from './component/Box';
 import styled from 'styled-components';
@@ -83,8 +83,17 @@ function App() {
     return value;
   }
 
+  useEffect(() => {
+    console.log("useEffect1 Fire");
+  }, [])
+
+  useEffect(() => {
+    console.log("useEffect2 fire");
+  }, [clickValue])
+
   return (
-    <>
+    <> 
+      {console.log("boomm!!")}
       <GameBox>
         {clickValue == null && computerValue == null ? 
           <>
